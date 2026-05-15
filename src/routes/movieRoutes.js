@@ -1,10 +1,19 @@
 import express from "express";
-// TODO (ejercicio 1): importar getAllMoviesController desde movieController.js
-// TODO (ejercicio 2): importar getMovieController
-// TODO (ejercicio 4): importar getAwardWinnersController
+import { getAllMoviesController } from "../controllers/movieController.js";
+import { getMovieController } from "../controllers/movieController.js";
+import { getAwardWinnersController } from "../controllers/movieController.js";
+import { getLatestMoviesController } from "../controllers/movieController.js";
+// TODO (ejercicio 1): importar getAllMoviesController desde movieController.js -
+// TODO (ejercicio 2): importar getMovieController -
+// TODO (ejercicio 4): importar getAwardWinnersController 
 // TODO (ejercicio 5): importar getLatestMoviesController
 
 const router = express.Router();
+
+router.get("/" , getAllMoviesController);
+router.get("/winners", getAwardWinnersController);
+router.get("/latest", getLatestMoviesController);
+router.get("/:id", getMovieController);
 
 // TODO (ejercicio 1): GET /  → getAllMoviesController
 // TODO (ejercicio 4): GET /winners → getAwardWinnersController  ⚠️ debe ir ANTES de /:id
